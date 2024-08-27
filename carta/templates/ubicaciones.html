@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+Ubicaciones
+{% endblock %}
+
+{% block content %}
+<h1>Ubicaciones</h1>
+<div id="map" style="height: 600px; width: 600px"></div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    var map = L.map('map').setView([6.242282087740674, -75.5894805055804], 14);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+
+    var marker = L.marker([6.245402136028818, -75.595247486954]).addTo(map);
+    var marker2 =L.marker([6.24366853507084, -75.59721255926615]).addTo(map);
+</script>
+{% endblock %}
